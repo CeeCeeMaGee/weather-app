@@ -10,8 +10,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="weather-app">
-    </div>
+        <div class="weather-app-wrapper">
+            <div class="weather-app">
+                <div class="overview">
     <h1>Delray Beach, FL, USA
     </h1>
     <ul>
@@ -22,12 +23,17 @@
             Partly Cloudy
         </li>
     </ul>
+    </div>
     <div class="row">
         <div class="col-6">
+            <div class="clearfix">
             <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="Partly Cloudy"
+            class="float-left"
             />
             90°F I °C
+            </div>
+            </div>
         </div>
         <div class="col-6">
             <ul>
@@ -43,11 +49,11 @@
             </ul>
         </div>
         </div>
-               <small>
+    </div>
+    <small>
         <a href="https://github.com/CeeCeeMaGee/weather-app" target="_blank"
          >Open-source code</a>  by Stacey Schwartz
     </small>
-    </div>
     </div>
     <script src="src/app.js" ></script>
 </body>
