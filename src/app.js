@@ -36,7 +36,7 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey ="ca6b966e1f2662438b430bcd9db95a1c";
-let city= "Delray Beach";
+let city= "Sydney";
 let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
