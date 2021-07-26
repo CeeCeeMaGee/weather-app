@@ -78,4 +78,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 
-search("New York");
+
