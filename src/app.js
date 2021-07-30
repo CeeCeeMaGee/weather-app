@@ -14,6 +14,7 @@ function formatDate(timestamp) {
 }
 function displayForecast(response) {
 console.log(response.data.daily);
+
 }
 let forecastElement = document.querySelector("#forecast");
 
@@ -37,7 +38,7 @@ days.forEach(function (day) {
          </div>
 
     `;
-})
+});
 
 
 forecastHTML = forecastHTML + `</div>`;
@@ -45,9 +46,11 @@ forecastElement.innerHTML = forecastHTML;
 
 
 function getForecast(coordinates) {
+
  let apiKey = "ca6b966e1f2662438b430bcd9db95a1c";
 let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
+
+
 axios.get(apiUrl).then(displayForecast);
 
 }
