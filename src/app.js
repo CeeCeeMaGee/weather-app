@@ -19,13 +19,15 @@ let forecast = response.data.daily;
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
-days.forEach(function (day) {
+
+forecast.forEach(function (day) {
     forecastHTML =
         forecastHTML +
     
         `
-    
+    f
+
+    }
         <div class="col-2">
             <div class="weather-forecast-date">${day}</div>
                     <img 
