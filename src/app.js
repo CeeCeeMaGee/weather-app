@@ -19,7 +19,7 @@ console.log(response.data.daily);
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
-let days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
 days.forEach(function (day) {
     forecastHTML =
         forecastHTML +
@@ -120,4 +120,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("New York");
-
