@@ -13,15 +13,17 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 function displayForecast(response) {
-  let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (day) {
+console.log(response.data.daily);
+
+}
+let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML = `<div class="row">`;
+let days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+days.forEach(function (day) {
     forecastHTML =
-      forecastHTML +
-      `
-    f
-    }
+        forecastHTML +
+        `
         <div class="col-2">
             <div class="weather-forecast-date">${day}</div>
                     <img 
@@ -29,28 +31,28 @@ function displayForecast(response) {
         alt=""
         width="42px"
         />
+        
          <div class="weather-forecast-temperatures"></div>
          <span class="weather-forecast-temperature-max">18°</span> 
          <span class="weather-forecast-temperature-min">12°</span>
          </div>
+
     `;
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
+});
+
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
 
 
 function getForecast(coordinates) {
-
- let apiKey = "ca6b966e1f2662438b430bcd9db95a1c";
+console.log(coordinates);
+let apiKey = "ca6b966e1f2662438b430bcd9db95a1c";
 let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
-
+console.log(apiUrl);
 axios.get(apiUrl).then(displayForecast);
-
 }
-
-
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
@@ -74,7 +76,7 @@ function displayTemperature(response) {
     );
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
-console.log(response.data);
+getForecast(response.data.coord);
 
 }
 
@@ -118,3 +120,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("New York");
+
